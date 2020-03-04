@@ -1,0 +1,58 @@
+#include <iostream>
+#include "Planeta.h"
+#include "func.h"
+#pragma warning( disable : 4996 )
+
+using namespace std;
+
+int main() {
+    system("chcp 1251");
+    setlocale(LC_ALL, "Russian");
+    Planeta** arr = NULL;
+    int k, r;
+    const char* filename1 = "123dew.txt";
+    char* filename = new char[10];
+    strcpy(filename, "123dew.txt");
+    arr = read_db(arr, filename);
+    do {
+        cout << "1) Запись БД  <<Солнечная система» из файла " << endl;
+        cout << "2) Чтение БД <<Солнечная система» из файла " << endl;
+        cout << "3) сортировка БД " << endl;
+        cout << "4) редактирование БД " << endl;
+        cout << "5) ввывод БД на экран " << endl;
+        cout << "Выбирите пункт ";
+        cin >> k;
+        switch (k)
+        {
+        case 1:
+            cout << "Количество планет которое вы хотите создать ";
+            cin >> k;           
+            write_file(filename,  k);
+            arr = read_db(arr, filename);
+            
+     
+            break;
+        case 2:
+
+            break;
+        case 3:
+ 
+            break;
+        case 4:
+            
+            break;
+        case  5:
+   
+            break;
+        default:
+            break;
+        }
+        cout << "Введите 1 если хотите продложить " << endl;
+
+        cin >> r;
+    } while (r == 1);
+
+    system("pause");
+    return 0;
+
+}
